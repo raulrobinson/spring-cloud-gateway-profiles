@@ -54,3 +54,13 @@ curl -X POST "http://localhost:8085/proxy?endpoint=https://api.backend.com/custo
   -H "x-country: CO" \
   -d '{"customerId":"123"}'
 ```
+
+# HTTP
+```bash
+curl.exe -i "http://localhost:8085/proxy?endpoint=https://httpbin.org/get"
+```
+
+# HTTPS (cert local, por eso -k)
+```bash
+curl.exe -k -i "https://localhost:8443/proxy?endpoint=https://httpbin.org/get"
+```
