@@ -1,8 +1,8 @@
-package com.gateway;
+package com.example.gateway;
 
-import com.gateway.config.OAuthProperties;
-import com.gateway.config.ProxyProperties;
-import com.gateway.config.ProxySslProperties;
+import com.example.gateway.config.OAuthProperties;
+import com.example.gateway.config.ProxyProperties;
+import com.example.gateway.config.ProxySslProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

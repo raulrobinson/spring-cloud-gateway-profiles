@@ -1,4 +1,4 @@
-package com.gateway.config;
+package com.example.gateway.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -16,7 +16,12 @@ import reactor.netty.http.server.HttpServer;
 public class AdditionalHttpServerConfig {
 
     @Bean
-    @ConditionalOnProperty(prefix = "gateway.http", name = "enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnProperty(
+            prefix = "gateway.http",
+            name = "enabled",
+            havingValue = "true",
+            matchIfMissing = true
+    )
     public SmartLifecycle additionalHttpServer(
             ApplicationContext applicationContext,
             @Value("${gateway.http.port:8085}") int httpPort,

@@ -1,6 +1,6 @@
-package com.gateway.oauth;
+package com.example.gateway.oauth;
 
-import com.gateway.config.OAuthProperties;
+import com.example.gateway.config.OAuthProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;

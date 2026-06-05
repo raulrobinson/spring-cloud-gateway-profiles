@@ -1,4 +1,4 @@
-package com.gateway.oauth;
+package com.example.gateway.oauth;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

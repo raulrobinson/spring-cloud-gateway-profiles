@@ -1,7 +1,7 @@
-package com.gateway.proxy;
+package com.example.gateway.proxy;
 
-import com.gateway.config.ProxyProperties;
-import com.gateway.oauth.OAuthTokenService;
+import com.example.gateway.config.ProxyProperties;
+import com.example.gateway.oauth.OAuthTokenService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
