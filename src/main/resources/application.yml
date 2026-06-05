@@ -1,7 +1,8 @@
-spring:
-  application:
-    name: oauth-proxy-gateway
-
+# ───────────────────────────────────────────────────────────────────────────────
+# SSL configuration for development environment
+# This configuration enable HTTPS for the application and configures
+# the SSL context with a self-signed certificate located in the classpath.
+# ───────────────────────────────────────────────────────────────────────────────
 server:
   port: 8443
   ssl:
@@ -11,11 +12,11 @@ server:
     key-store-type: PKCS12
     key-alias: backend-dev
 
-gateway:
-  http:
-    enabled: true
-    port: 8085
-
+# ───────────────────────────────────────────────────────────────────────────────
+# Proxy configuration for development environment.
+# This configuration enables SSL for outgoing requests and configures
+# the trust store with a self-signed certificate.
+# ───────────────────────────────────────────────────────────────────────────────
 proxy:
   endpoint-query-param: endpoint
   ssl:
@@ -25,6 +26,14 @@ proxy:
     trust-store-type: PKCS12
     # insecure-trust-all: true
 
+# ───────────────────────────────────────────────────────────────────────────────
+spring:
+  main:
+    lazy-initialization: true
+  application:
+    name: oauth-proxy-gateway
+
+# ───────────────────────────────────────────────────────────────────────────────
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
