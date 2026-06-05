@@ -1,4 +1,4 @@
-package com.example.gateway.proxy;
+package com.example.gateway.adapter.in.web;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,9 +1,9 @@
-package com.example.gateway.oauth;
-
+package com.example.gateway.adapter.out.oauth;
 import com.example.gateway.config.OAuthProperties;
+import com.example.gateway.domain.ports.out.OAuthTokenPort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -12,15 +12,16 @@ import reactor.core.publisher.Mono;
 import java.time.Instant;
 import java.util.concurrent.atomic.AtomicReference;
 
-@Service
+@Component
 @RequiredArgsConstructor
-public class OAuthTokenService {
+public class OAuthTokenAdapter implements OAuthTokenPort {
 
     private final OAuthProperties properties;
     private final WebClient.Builder webClientBuilder;
 
     private final AtomicReference<CachedToken> cachedToken = new AtomicReference<>();
 
+    @Override
     public Mono<String> getAccessToken() {
         CachedToken current = cachedToken.get();
 
@@ -61,10 +62,7 @@ public class OAuthTokenService {
                 .bodyToMono(TokenResponse.class);
     }
 
-    private record CachedToken(
-            String accessToken,
-            Instant expiresAt
-    ) {
+    private record CachedToken(String accessToken, Instant expiresAt) {
         boolean isValid() {
             return accessToken != null
                     && !accessToken.isBlank()

@@ -1,5 +1,6 @@
-package com.example.gateway.config;
+package com.example.gateway.adapter.out.http;
 
+import com.example.gateway.config.ProxySslProperties;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import lombok.RequiredArgsConstructor;

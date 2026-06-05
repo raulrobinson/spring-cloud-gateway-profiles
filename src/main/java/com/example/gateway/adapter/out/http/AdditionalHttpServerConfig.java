@@ -1,4 +1,4 @@
-package com.example.gateway.config;
+package com.example.gateway.adapter.out.http;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
