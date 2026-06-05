@@ -1,0 +1,6 @@
+oauth:
+  token-uri: https://dev-auth.example.com/oauth2/token
+  client-id: dev-client
+  client-secret: dev-secret
+  grant-type: client_credentials
+  scope: dev/read

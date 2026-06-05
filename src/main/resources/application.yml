@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: oauth-proxy-gateway
+
+server:
+  port: 8085
+
+proxy:
+  endpoint-query-param: endpoint
+  ssl:
+    enabled: true
+    trust-store: classpath:certs/dev-truststore.p12
+    trust-store-password: changeit
+    trust-store-type: PKCS12
+    # insecure-trust-all: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"

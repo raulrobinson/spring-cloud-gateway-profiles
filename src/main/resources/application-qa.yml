@@ -1,0 +1,6 @@
+oauth:
+  token-uri: https://qa-auth.example.com/oauth2/token
+  client-id: qa-client
+  client-secret: qa-secret
+  grant-type: client_credentials
+  scope: qa/read
